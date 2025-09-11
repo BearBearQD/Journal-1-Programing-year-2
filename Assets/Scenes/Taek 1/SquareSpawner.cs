@@ -26,6 +26,7 @@ public class SquareSpawner : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log("Clap");
             Debug.DrawLine(topLeft, topRight);
             Debug.DrawLine(bottomLeft, bottomRight);
             Debug.DrawLine(topLeft, bottomLeft);
