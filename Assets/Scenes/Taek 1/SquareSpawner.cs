@@ -1,10 +1,14 @@
 using System.Drawing;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SquareSpawner : MonoBehaviour
 {
     public Vector2 position = new Vector2(0, 0);
     public GameObject Square;
+    public float scaleSpeed;
+    public float minScale = 0.2f;
+    public float maxScale = 5f;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,7 +33,14 @@ public class SquareSpawner : MonoBehaviour
             Debug.Log(position.x);
             Debug.Log(position.y);  
         }
+
         Square.transform.position = spawnPos;
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        if (scroll != 0)
+        {
+        }
+        Square.transform.localScale = new Vector3(Mathf.Clamp(scroll, minScale, maxScale), Mathf.Clamp(scroll, minScale, maxScale), 2);
+
 
 
     }
